@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-
+import mongoosePaginate from 'mongoose-paginate-v2'
 const collection = 'Users'
 
 const schema = new mongoose.Schema({
@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
     age: Number,
     password: String
 })
-
+schema.plugin(mongoosePaginate)
 const userModel = mongoose.model(collection, schema)
 
 export default userModel
